@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "LeetCode to GitHub",
+  "version": "1.0",
+  "description": "Automatically integrate your LeetCode submissions with GitHub.",
+  "permissions": [
+    "activeTab",
+    "identity",
+    "storage",
+    "https://leetcode.com/*",
+    "https://api.github.com/*"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  }
+}
